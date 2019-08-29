@@ -16,12 +16,15 @@
     * [-- 单进程浏览器](base/#单进程浏览器) 
     * [-- 早期多进程浏览器](base/#早期多进程浏览器) 
     * [-- 现阶段多进程浏览器](base/#现阶段多进程浏览器) 
+* [-- Chrome的一些Tips](base/#Chrome的一些Tips) 
+    * [-- 通过导航查看版本信息](base/#通过导航查看版本信息) 
+    * [-- 新版本Chrome的导航变化](base/#新版本Chrome的导航变化) 
 
 
 
 <div class="MoreWay">Chrome and NetWork</div>
 
-<a class="developerLogo" href="http://git.biuxbiu.design/" target="_blank"><img src="img/chrome.jpg"></a>
+<a class="developerLogo" href="http://chrome.biuxbiu.design/" target="_blank"><img src="img/chrome.jpg"></a>
 
 
 <div class="MoreWay">Git Commond</div>
