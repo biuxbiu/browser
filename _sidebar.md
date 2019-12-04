@@ -30,11 +30,16 @@
     * [-- 什么是IP](network/#什么是IP)
     * [-- 什么是UDP](network/#什么是UDP)
     * [-- 什么是TCP](network/#什么是TCP)
+    * [-- 什么是DNS](network/#什么是DNS)
     * [-- TCP的链接过程](network/#TCP的链接过程)
-        * [-- 建立链接](network/#建立链接)
+        * [-- 建立连接(三次握手)](network/#建立连接)
         * [-- 传输数据](network/#传输数据)
-        * [-- 断开连接](network/#断开连接)
+        * [-- 断开连接(四次挥手)](network/#断开连接)
+    * [-- http和tcp的区别](network/#http和tcp的区别)
     * [-- http和https的区别](network/#http和https的区别)
+    * [-- 多标签页的浏览器端口](network/#多标签页的浏览器端口)
+    * [-- TCP数据包丢失和HTTP的渲染关系](network/#TCP数据包丢失和HTTP的渲染关系)
+
 
 
 
