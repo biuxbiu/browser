@@ -35,7 +35,7 @@
         * [-- 建立连接(三次握手)](network/#建立连接)
         * [-- 传输数据](network/#传输数据)
         * [-- 断开连接(四次挥手)](network/#断开连接)
-    * [-- http和tcp的区别](network/#http和tcp的区别)
+    * [-- http和tcp的联系](network/#http和tcp的联系)
     * [-- http和https的区别](network/#http和https的区别)
     * [-- 多标签页的浏览器端口](network/#多标签页的浏览器端口)
     * [-- TCP数据包丢失和HTTP的渲染关系](network/#TCP数据包丢失和HTTP的渲染关系)
