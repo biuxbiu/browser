@@ -123,12 +123,17 @@ IP地址。当从缓存中找到这个IP地址，`DNS解析过程` 结束。
 
 以网站 `http://www.biuxbiu.design/#/` 为例子，
 
-我们在终端输入以下命令就会返回一串数据
+我们在终端输入以下命令：
 
 ```copy
 curl -i http://www.biuxbiu.design/#/
 ```
 
+返回的命令如下：
+
+```copy
+
+```
 
 <Br>
 <Br>
