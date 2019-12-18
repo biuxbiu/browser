@@ -178,6 +178,25 @@ curl -i http://www.biuxbiu.design/#/
 数据包是否丢失，是否完整的情况其实不影响实时渲染，因为数据包的完整性是在 `TCP` 阶段就已经通过检验的（ `TCP` 阶段对丢失的数据包有重传机制）； 
 
 
+#### 总结
+
+<br>
+<br>
+
+#### http状态码
+
+|http状态码|详细状态码|状态原因|
+|--|--|--|
+|1xx||消息|
+|2xx||成功|
+|3xx||重定向|
+|4xx||客户端错误|
+|5xx||服务端错误|
+|5xx|500|借口报错|
+|5xx|502|后端服务没开启|
+|5xx|503|启动挂了|
+
+
 <!-- https://juejin.im/post/5df7959051882512480a83e7?utm_source=gold_browser_extension
 
 https://juejin.im/post/5df8f11df265da33f40f255e?utm_source=gold_browser_extension -->
