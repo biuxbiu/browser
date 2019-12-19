@@ -146,16 +146,14 @@ curl -i http://www.biuxbiu.design/#/
 
 #### http和https的区别
 
-<<<<<<< HEAD
 >`http` ：是超文本传输协议，信息是明文传输的；<br>
 `https` ：在 `http` 上多了一层 `SSL` 的加密传输协议；<br><br>
-=======
 首先 `https` 是 `http Security` 的简称；<Br>
 虽说是 `https` 但是，本质上还是 `http` ；为什么呢？只不过因为 `https` 在传输层多了一步，这一步就是 `加密` ； 
 
 >`http` ：是超文本传输协议，信息是文明传输的；<br>
 `https` ：是具有安全性的 `SSL` 加密传输协议；<br><br>
->>>>>>> 93cee03f24f5d1d23172484ef94133e0564b3a77
+
 两者是完全不同的连接方式，用的端口也不一样；<br>
 `http` 用的是 `80` 端口；<br>
 `https` 用的是 `443` 端口；<br><br>
