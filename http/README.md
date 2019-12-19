@@ -12,6 +12,12 @@
 <Br>
 <Br>
 
+
+!>`http` 有以下3个问题：<br>
+内容未加密，容易被监听，都是明文传输；<Br>
+无法验证内容的完整性，不知道内容有没有被修改过或者容易被篡改；<br>
+无法验证对方的身份，无法知道目前对话的人是谁；
+
 #### http的请求流程
 
 * 构建请求
@@ -140,8 +146,16 @@ curl -i http://www.biuxbiu.design/#/
 
 #### http和https的区别
 
+<<<<<<< HEAD
 >`http` ：是超文本传输协议，信息是明文传输的；<br>
 `https` ：在 `http` 上多了一层 `SSL` 的加密传输协议；<br><br>
+=======
+首先 `https` 是 `http Security` 的简称；<Br>
+虽说是 `https` 但是，本质上还是 `http` ；为什么呢？只不过因为 `https` 在传输层多了一步，这一步就是 `加密` ； 
+
+>`http` ：是超文本传输协议，信息是文明传输的；<br>
+`https` ：是具有安全性的 `SSL` 加密传输协议；<br><br>
+>>>>>>> 93cee03f24f5d1d23172484ef94133e0564b3a77
 两者是完全不同的连接方式，用的端口也不一样；<br>
 `http` 用的是 `80` 端口；<br>
 `https` 用的是 `443` 端口；<br><br>
@@ -177,3 +191,25 @@ curl -i http://www.biuxbiu.design/#/
 数据包是否丢失，是否完整的情况其实不影响实时渲染，因为数据包的完整性是在 `TCP` 阶段就已经通过检验的（ `TCP` 阶段对丢失的数据包有重传机制）； 
 
 
+#### 总结
+
+<br>
+<br>
+
+#### http状态码
+
+|http状态码|详细状态码|状态原因|
+|--|--|--|
+|1xx||消息|
+|2xx||成功|
+|3xx||重定向|
+|4xx||客户端错误|
+|5xx||服务端错误|
+|5xx|500|借口报错|
+|5xx|502|后端服务没开启|
+|5xx|503|启动挂了|
+
+
+<!-- https://juejin.im/post/5df7959051882512480a83e7?utm_source=gold_browser_extension
+
+https://juejin.im/post/5df8f11df265da33f40f255e?utm_source=gold_browser_extension -->
