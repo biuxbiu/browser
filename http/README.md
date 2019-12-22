@@ -125,20 +125,121 @@ IP地址。当从缓存中找到这个IP地址，`DNS解析过程` 结束。
 
 <b>浏览器是如何发送请求给服务器的？</b>
 
+首先浏览器会想服务器 `发送请求行`，它包括 `请求方法` ，`请求URI和 http 版本协议`。 
+
+我们可以通过 `chrome` 的 `控制面板` - `network` - `doc` 查看服务器的 `请求头` 和 `响应头`；
+
+我们可以选择 `Doc` 查看文档的相关，我们可以看到右边的控制面分别有 `general`，`response headers 响应头` 和 `request headers 请求头` :
+
+<img src="../img/network.png">
+
+<Br>
+<Br>
+
+<b>General</b>
+
+<img src="../img/general.png">
+
+```copy
+`Request URL` : https://www.baidu.com/  -- 请求的地址
+`Request Method`: GET           -- 请求方法
+`Status Code`: 200 OK           -- 状态码
+`Remote Address`: 182.61.200.6:443          -- 路由地址      
+`Referrer Policy`: no-referrer-when-downgrade       -- 来自于哪里
+```
+
+<Br>
+
+
+<b>request headers 响应头</b>
+
+<img src="../img/request.png">
+
+```copy
+Accept: text/html           -- 接受的类型
+Accept-Encoding: gzip       -- 接受的编码
+Accept-Language: en,zh;q=0.9,zh-CN;q=0.8        -- 接受的语言
+Cache-Control: max-age=0        -- 缓存控制
+Connection:keep-alive       -- 客户端与服务端的链接关系
+cookies:BAIDUID=4E109BB4F...        -- 客户端暂存服务端的缓存
+Host: www.baidu.com         -- 目标主机和端口号
+
+```
+
+
+>`Cache-Control` 有两个值，一个是 `no-cache` ，一个是 `max-age=0` 。<br>
+`no-cache` 指的是不管服务端有没有设置 `Cache-Control`，每次都必须从服务端获取请求；<br>
+`max-age=0` 指的是在获取资源之前校验 `ETag/Last-Modified`<br>
+`Connection` 的 `keep-alive` ；我们需要先了解什么是 `短链接` ，什么是 `长链接`；<br>
+`短链接`：指的是每次请求就建立链接。 `创建tcp链接` - `http请求(又分请求资源-响应资源两个阶段)` - `关闭tcp链接` 的过程。<Br>
+`长链接`：指的是只建立一次链接，多次资源请求都会服用该链接，完成后关闭。<br>
+例如：页面上要请求20张图片，只需要建立一次 `tcp链接`，然后一次请求这20张图片，请求完之后释放（关闭链接）；<br>
+我们可以理解 `keep-alive` 就是 `长链接`；
+
+<br>
+
+
+
+
+
+<b>response headers 响应头</b>
+
+<img src="../img/response.png">
+
+<Br>
+<Br>
+
+
+
+
+
+
 我们可以在 `linux` 通过命令 `curl` 可以查看返回的响应行响应头和响应提的数据，开进一步理解服务器是怎么响应浏览器的。
 
-以网站 `http://www.biuxbiu.design/#/` 为例子，
+以网站 `http://www.baidu.com` 为例子，
 
 我们在终端输入以下命令：
 
 ```copy
-curl -i http://www.biuxbiu.design/#/
+curl -i http://www.baidu.com
 ```
 
 返回的命令如下：
 
 ```copy
+<!-- 请求行开始 -->
+HTTP/1.1 200 OK         
+<!-- 请求行结束 -->
 
+<!-- 请求头开始 -->
+Accept-Ranges: bytes
+Cache-Control: private, no-cache, no-store, proxy-revalidate, no-transform
+Connection: keep-alive
+Content-Length: 2381
+Content-Type: text/html
+Date: Sun, 22 Dec 2019 10:56:04 GMT
+Etag: "588604c8-94d"
+Last-Modified: Mon, 23 Jan 2017 13:27:36 GMT
+Pragma: no-cache
+Server: bfe/1.0.8.18
+Set-Cookie: BDORZ=27315; max-age=86400; domain=.baidu.com; path=/
+<!-- 请求头结束 -->
+
+<!-- 请求体开始 -->
+<!-- 请求体结束 -->
+
+<!-- 返回的 content-type 的内容开始 -->
+<!DOCTYPE html>
+...
+<!-- 返回的 content-type 的内容结束 -->
+
+```
+
+
+```copy
+发送请求行：指的是告诉服务器浏览器需要什么资源；
+常用的请求方法有 get 和 post 方法
+get 方法是常用的请求方法。另一种方法是 post 。它用于发送一些数据给服务器。
 ```
 
 <Br>
