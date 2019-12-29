@@ -23,7 +23,7 @@
         * [-- 通过导航查看版本信息](base/#通过导航查看版本信息) 
         * [-- 新版本Chrome的导航变化](base/#新版本Chrome的导航变化) 
 * [了解TCPIP协议](network/#了解TCPIP协议)
-    * [-- 七层网络协议](network/#七层网络协议)
+    * [-- OSI七层网络协议](network/#OSI七层网络协议)
     * [-- TCPIP协议](network/#TCPIP协议)
     * [-- 各个层的功能](network/#各个层的功能)
     * [-- 什么是TCPIP协议](network/#什么是TCPIP协议)
@@ -36,6 +36,7 @@
         * [-- 传输数据](network/#传输数据)
         * [-- 断开连接(四次挥手)](network/#断开连接)
     * [-- TCP和UDP的区别](network/#TCP和UDP的区别)
+    * [-- TCP与多标签窗口](network/#TCP与多标签窗口)
 * [-- 了解Http](http/#了解Http)
     * [-- http和tcp的联系](http/#http和tcp的联系)
     * [-- http的请求流程](http/#http的请求流程)
@@ -48,11 +49,9 @@
         * [-- 发送HTTP请求](http/#发送HTTP请求)
     * [-- HTTP请求过程](http/#HTTP请求过程)
     * [-- http和https的区别](http/#http和https的区别)
-    * [-- 多标签页的浏览器端口](http/#多标签页的浏览器端口)
     * [-- TCP数据包丢失和HTTP的渲染关系](http/#TCP数据包丢失和HTTP的渲染关系)
     * [-- 什么是DNS](http/#什么是DNS)
-
-
+* [-- URL到页面展示](render/#URL到页面展示)
 
 
 
