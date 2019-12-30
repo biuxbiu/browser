@@ -54,9 +54,12 @@
     * [-- 导航栏输入](navigation/#导航栏输入)
     * [-- 查找缓存](navigation/#查找缓存)
     * [-- URL请求过程](navigation/#URL请求过程)
+        * [-- 浏览器是如何发送请求给服务器的](navigation/#浏览器是如何发送请求给服务器的)
     * [-- 准备渲染](navigation/#准备渲染)
     * [-- TIPS](navigation/#TIPS)
 * [-- 页面渲染过程](render/#页面渲染过程)
+    * [-- 构建dom树](render/#构建dom树)
+    * [-- 构建cssom](render/#构建cssom)
 
 
 
