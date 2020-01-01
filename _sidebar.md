@@ -61,6 +61,11 @@
 * [-- 页面渲染过程](render/#页面渲染过程)
     * [-- 构建dom树](render/#构建dom树)
     * [-- 构建cssom](render/#构建cssom)
+    * [-- 布局](render/#布局)
+    * [-- 图层](render/#图层)
+    * [-- 绘制](render/#绘制)
+    * [-- 删格化](render/#删格化)
+    * [-- 合成和显示](render/#合成和显示)
 
 
 
