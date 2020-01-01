@@ -15,19 +15,18 @@
 `dom树` 指的是将一个 `html` 文件解析成浏览器可以识别的结构，最终输出树状结构的 `dom`；
 
 
-我们打开浏览器的 `控制台` - `console` ，输入 `document` 后回车。<br>
-我们可以看到控制台输出一个完整的 `dom` 结构。
-
-我们可以看到输出的 `dom` 结构与我们 `html` 的内容是一模一样的。<br>
+我们打开浏览器的 `控制台` - `console` ，输入 `document` 后回车。我们可以看到控制台输出一个完整的 `dom` 结构。 `dom` 结构与我们 `html` 的内容是一模一样的。
 但是不同的是，`dom` 是保存在内存中的树状图结构，可以用 `JS` 来查询或者修改 `dom` 的内容。
 
-比如你要获取 `html` 的内容，我们可以在 `控制台` - `console` 输入：
+<br>
 
+比如你要获取 `html` 的内容，我们可以在 `控制台` - `console` 输入：
 (以 https://www.baidu.com/ 为例)
 
 ```copy
 document.documentElement
 ```
+<br>
 
 输出结构为：
 
@@ -41,6 +40,7 @@ document.documentElement
 
 #### 构建cssom
 
+什么是 `cssom`?<br>
 `构建cssom` ，其实就是计算 `css` ;<br>
 <Br>
 
@@ -55,12 +55,13 @@ document.documentElement
 这个就是 `styleSheet` 。<br><br>
 
 我们可以通过 `控制台` - `console` 来查看 `cssom` 的结构：
-
 (以 https://www.baidu.com/ 为例)
 
 ```copy
 document.styleSheets
 ```
+
+<br>
 
 输出结构为：
 
@@ -68,10 +69,10 @@ document.styleSheets
 StyleSheetList {0: CSSStyleSheet, 1: CSSStyleSheet, 2: CSSStyleSheet, 3: CSSStyleSheet, 4: CSSStyleSheet, 5: CSSStyleSheet, 6: CSSStyleSheet, 7: CSSStyleSheet, length: 8}
 ```
 
-<br>
+<br><Br>
 
 这个 `styleSheets` 会把我们刚才说的三种 `css` 途径来源一起输出出来。<br>
-同样，这个 `styleSheets` 也具备来查询和修改的功能。
+同样，这个 `styleSheets` 也具备来查询和修改的功能。<br><br>
 
 接下来，渲染进程还会进一步处理这个 `styleSheets` 。在 `css` 中有一些相对的单位和一些语意化的属性值（比如说 `rem` ，`em` ， `red` ，`bold` 等等）并不能很好的让渲染引擎理解，所以需要将这些转换成渲染引擎容易理解的值。
 
@@ -81,7 +82,14 @@ font-size:1rem;       -->       font-size:100px;
 font-weight:bold;     -->       font-weight:700;
 ```
 
-从
+<br><br>
+将 `styleSheets` 换算成渲染引擎能够理解的值之后， `cssom tree` 和 `dom tree` 会相结合。
+`cssom tree` 和 `dom tree` 相结合之后，会计算 `dom tree` 中每个节点的具体样式。 
+
+>在 `dom` 节点中，有些属性是具有继承性质的，比如 `font-size` ，`color` 等等。 `cssom tree` 和 `dom tree` 相结合后会对这些属性的具体样式进行计算。 要了解每个 `dom` 节点的具体样式，只需要在 `控制台` - `elements` 的选项下的 `computed` 便可以查询到该 `dom` 元素的具体样式。
+
+<img src="../img/css-computed.jpg">
+
 
 <Br>
 <Br>

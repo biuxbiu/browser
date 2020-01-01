@@ -17,6 +17,11 @@
 在发起请求之前，浏览器会对本地的缓存副本做一次校验。即查看本地有没有缓存。
 * 网络进程在会先从本地查找缓存资源。如果本地没有缓存资源，就会直接进入网络请求；
 
+<Br>
+<Br>
+
+
+
 
 #### URL请求过程
 
@@ -25,20 +30,36 @@
 * 接着网络进程会接受服务器发来的响应行和响应头，并且解析。（如果解析后的响应头状态码为 `301` 或者 `302` ，则会触发响应头的 `location` 字段，进行重定向。）;
 * 网络进程解析响应行和响应头之后会告诉浏览器已经收到服务器反馈（网络进程会根据响应头返回的 `content-type` 来区分文件格式。如果请求的 `URL` 是一个下载文件，就会将此文件下载（此时导航结束）。如果是一个 `html` 的话就会告诉浏览器可以进行下一步，继续导航）；
 
-<b>浏览器是如何发送请求给服务器的？</b>
+<br>
+<br>
+
+<b>服务器怎么处理http的请求的</b>
 
 首先浏览器会想服务器 `发送请求行`，它包括 `请求方法` ，`请求URI和 http 版本协议`。 
 
-我们可以通过 `chrome` 的 `控制面板` - `network` - `doc` 查看服务器的 `请求头` 和 `响应头`；
+```copy
+GET /index.html HTTP/1.1
+```
 
-我们可以选择 `Doc` 查看文档的相关，我们可以看到右边的控制面分别有 `general`，`response headers 响应头` 和 `request headers 请求头` :
+<br>
+<br>
+
+
+浏览器还会想服务器发送请求头；服务器接受到请求头之后会返回请求，返回响应头和响应体；
+
+>我们可以通过 `chrome` 的 `控制面板` - `network` - `doc` 查看服务器的 `请求头` 和 `响应头`；<br>
+我们可以选择 `Doc` 查看文档的相关，我们可以看到右边的控制面分别有 `general 概要`，`response headers 响应头` 和 `request headers 请求头` :
+
+<br><br>
 
 <img src="../img/network.png">
 
 <Br>
 <Br>
 
-<b>General</b>
+<b>General 概要</b>
+
+这部分包含请求方式，状态码，服务器地址以及 `Referrer` 策略。
 
 <img src="../img/general.png">
 
@@ -47,13 +68,15 @@
 `Request Method`: GET           -- 请求方法
 `Status Code`: 200 OK           -- 状态码
 `Remote Address`: 182.61.200.6:443          -- 路由地址      
-`Referrer Policy`: no-referrer-when-downgrade       -- 来自于哪里
+`Referrer Policy`: no-referrer-when-downgrade       -- 来自于哪里 (指的是该页面是从哪里跳转过来。)
+document.referrer 返回载入当前页面来源文档的URL；
+
 ```
 
 <Br>
 
 
-<b>request headers 响应头</b>
+<b>request headers 请求头</b>
 
 <img src="../img/request.png">
 
@@ -113,6 +136,8 @@ document.lastModified           // 12/29/2019 23-16-04<br>
 curl -i http://www.baidu.com
 ```
 
+<br><br>
+
 返回的命令如下：
 
 ```copy
@@ -153,8 +178,8 @@ get 方法是常用的请求方法。另一种方法是 post 。它用于发送�
 
 
 >`curl -i http://www.baidu.com` 和 `culr -I http://www.baidu.com` 是不一样的：<Br>
-`-i` 表示获取响应头和响应行数据，还有响应体数据；<Br>
-`-I` 表示只获取响应头和响应行数据，不需要过去响应体数据。
+`-i` 表示获取响应头和响应行数据，还有响应体（正文）数据；<Br>
+`-I` 表示只获取响应头和响应行数据，不需要过去响应体（正文）数据。
 
 <b>curl -i 和 culr -I 的区别</b>
 
@@ -183,3 +208,4 @@ get 方法是常用的请求方法。另一种方法是 post 。它用于发送�
 #### TIPS
 
 * 有的时候我们会看到 `a` 链接上会有属性 `rel="noopener noreferrer"` ，这个的意思是新打开的子窗口不需要访问父窗口的任何内容，这是未了防止钓鱼网站窃取父窗口的信息。对这样的属性，一般都会新建一个渲染进程。
+
