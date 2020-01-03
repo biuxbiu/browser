@@ -46,7 +46,14 @@ document.documentElement
 #### 构建cssom
 
 什么是 `cssom`?<br>
-`构建cssom` ，其实就是计算 `css` ;<br>
+`构建cssom` ，其实就是计算 `css` ;<br><Br> 
+
+<b>`构建cssom` 的时候会处理一下这几个操作：</b><Br> 
+* `css` 会换算成渲染引擎可以识别的内容；
+* 会对 `css` 的属性值进行标准化；
+* 会与 `dom` 元素进行合并，来机选 `dom` 元素的几何位置；
+
+<Br>
 <Br>
 
 <b>一般我们 `css` 的来源有三个途径：</b>
@@ -106,7 +113,7 @@ font-weight:bold;     -->       font-weight:700;
 
 #### 分层
 
-我们有来布局树，还不能马上执行叶脉你的绘制。
+我们有来布局树，还不能马上执行页面的绘制。
 
 
 <Br>
